@@ -6,6 +6,13 @@ class Movie
     public $descrizione;
     public $lingua;
     public $durata;
+
+    public function getCard()
+    {
+        return "<h3>Titolo: {$this->titolo} </h3>
+        <p>Descrizione: {$this->descrizione}</p>
+        <span>Lingua: {$this->lingua} | Durata: {$this->durata}</span>";
+    }
 }
 $fastAndFurios = new Movie();
 $fastAndFurios->titolo = 'Fast & Furious';
@@ -25,7 +32,7 @@ $gomorra->descrizione = 'Lorem ipsum dolor sit amet consectetur adipisicing elit
 $gomorra->lingua = 'IT';
 $gomorra->durata = '100 minuti';
 
-$movieList = [$fastAndFurios, $ilPadrino, $gomorra]
+$movieList = [$fastAndFurios, $ilPadrino, $gomorra];
 
 ?>
 
@@ -40,11 +47,9 @@ $movieList = [$fastAndFurios, $ilPadrino, $gomorra]
 </head>
 
 <body>
-    <?php foreach ($movieList as $movie) { ?>
-        <h3><?= "Titolo: $movie->titolo" ?></h3>
-        <p><?= "Descrizione: $movie->descrizione" ?></p>
-        <span><?= "Lingua: $movie->lingua | Durata: $movie->durata" ?></span>
-    <?php } ?>
+    <?php foreach ($movieList as $movie) {
+        echo $movie->getCard();
+    } ?>
 </body>
 
 </html>
