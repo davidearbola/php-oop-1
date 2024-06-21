@@ -13,26 +13,20 @@ class Movie
         <p>Descrizione: {$this->descrizione}</p>
         <span>Lingua: {$this->lingua} | Durata: {$this->durata}</span>";
     }
+    public function __construct($titolo, $descrizione, $lingua, $durata)
+    {
+        $this->titolo = $titolo;
+        $this->descrizione = $descrizione;
+        $this->lingua = $lingua;
+        $this->durata = $durata;
+    }
 }
-$fastAndFurios = new Movie();
-$fastAndFurios->titolo = 'Fast & Furious';
-$fastAndFurios->descrizione = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam!';
-$fastAndFurios->lingua = 'EN';
-$fastAndFurios->durata = '120 minuti';
 
-$ilPadrino = new Movie();
-$ilPadrino->titolo = 'Il Padrino';
-$ilPadrino->descrizione = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam!';
-$ilPadrino->lingua = 'EN';
-$ilPadrino->durata = '180 minuti';
-
-$gomorra = new Movie();
-$gomorra->titolo = 'Gomorra';
-$gomorra->descrizione = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam!';
-$gomorra->lingua = 'IT';
-$gomorra->durata = '100 minuti';
-
-$movieList = [$fastAndFurios, $ilPadrino, $gomorra];
+$movieList = [
+    new Movie('Fast & Furious', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam!', 'EN', '120 min'),
+    new Movie('Il Padrino', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam!', 'EN', '180 min'),
+    new Movie('Gomorra', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, quam!', 'IT', '100 min'),
+]
 
 ?>
 
