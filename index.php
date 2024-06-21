@@ -25,6 +25,8 @@ $gomorra->descrizione = 'Lorem ipsum dolor sit amet consectetur adipisicing elit
 $gomorra->lingua = 'IT';
 $gomorra->durata = '100 minuti';
 
+$movieList = [$fastAndFurios, $ilPadrino, $gomorra]
+
 ?>
 
 
@@ -38,19 +40,11 @@ $gomorra->durata = '100 minuti';
 </head>
 
 <body>
-
-    <h3><?= "Titolo: $fastAndFurios->titolo" ?></h3>
-    <p><?= "Descrizione: $fastAndFurios->descrizione" ?></p>
-    <span><?= "Lingua: $fastAndFurios->lingua | Durata: $fastAndFurios->durata" ?></span>
-
-    <h3><?= "Titolo: $ilPadrino->titolo" ?></h3>
-    <p><?= "Descrizione: $ilPadrino->descrizione" ?></p>
-    <span><?= "Lingua: $ilPadrino->lingua | Durata: $ilPadrino->durata" ?></span>
-
-    <h3><?= "Titolo: $gomorra->titolo" ?></h3>
-    <p><?= "Descrizione: $gomorra->descrizione" ?></p>
-    <span><?= "Lingua: $gomorra->lingua | Durata: $gomorra->durata" ?></span>
-
+    <?php foreach ($movieList as $movie) { ?>
+        <h3><?= "Titolo: $movie->titolo" ?></h3>
+        <p><?= "Descrizione: $movie->descrizione" ?></p>
+        <span><?= "Lingua: $movie->lingua | Durata: $movie->durata" ?></span>
+    <?php } ?>
 </body>
 
 </html>
